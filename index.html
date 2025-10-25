@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Happy Birthday Beautiful</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Brush+Script+MT&family=Great+Vibes&family=Pacifico&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Landing Page Styles */
+    .landing-page {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #FFB6D9 0%, #FFC9E3 25%, #FFD4EC 50%, #FFE0F3 75%, #FFF0F9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+    
+    .landing-page::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 182, 217, 0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      top: -100px;
+      left: -100px;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .landing-page::after {
+      content: '';
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(255, 201, 227, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      bottom: -80px;
+      right: -80px;
+      animation: float 8s ease-in-out infinite reverse;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.1); }
+    }
+    
+    .landing-content {
+      text-align: center;
+      z-index: 10;
+      padding: 30px;
+      max-width: 600px;
+    }
+    
+    .landing-title {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      color: #8B4375;
+      margin-bottom: 25px;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      animation: fadeInDown 1.2s ease-out;
+      line-height: 1.2;
+    }
+    
+    .landing-subtitle {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: #6B3559;
+      margin-bottom: 35px;
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      animation: fadeInUp 1.4s ease-out;
+      font-style: italic;
+      opacity: 0.9;
+    }
+    
+    .celebration-btn {
+      background: linear-gradient(135deg, #FF8CB4 0%, #FF9FBF 100%);
+      color: white;
+      border: none;
+      padding: 18px 45px;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(255, 140, 180, 0.4);
+      transition: all 0.3s ease;
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      animation: fadeInUp 1.6s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .celebration-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .celebration-btn:hover::before {
+      left: 100%;
+    }
+    
+    .celebration-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 140, 180, 0.6);
+    }
+    
+    .celebration-btn:active {
+      transform: translateY(-1px);
+    }
+    
+    .heart-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 25px 0;
+      font-size: 1.8rem;
+      animation: fadeIn 1.8s ease-out;
+    }
+    
+    .heart-icons i {
+      color: #FF6B9D;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      display: inline-block;
+    }
+    
+    .heart-icons i:nth-child(2) { animation-delay: 0.2s; }
+    .heart-icons i:nth-child(3) { animation-delay: 0.4s; }
+    .heart-icons i:nth-child(4) { animation-delay: 0.6s; }
+    .heart-icons i:nth-child(5) { animation-delay: 0.8s; }
+    
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+    }
+    
+    .decorative-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+    
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #FFD700, #FFA500);
+      border-radius: 50%;
+      animation: sparkle 3s ease-in-out infinite;
+      opacity: 0;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1) rotate(180deg); }
+    }
+    
+    .sparkle:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 25%; right: 15%; animation-delay: 0.5s; }
+    .sparkle:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 1s; }
+    .sparkle:nth-child(4) { bottom: 20%; right: 25%; animation-delay: 1.5s; }
+    .sparkle:nth-child(5) { top: 40%; left: 8%; animation-delay: 2s; }
+    .sparkle:nth-child(6) { top: 60%; right: 12%; animation-delay: 2.5s; }
+    
+    .butterfly {
+      position: absolute;
+      font-size: 1.5rem;
+      color: #D8A1D6;
+      animation: fly 15s linear infinite;
+      opacity: 0.6;
+    }
+    
+    @keyframes fly {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(50vw, -30vh) rotate(90deg); }
+      50% { transform: translate(80vw, 20vh) rotate(180deg); }
+      75% { transform: translate(40vw, 50vh) rotate(270deg); }
+      100% { transform: translate(0, 0) rotate(360deg); }
+    }
+    
+    /* Flying Hearts */
+    .flying-heart {
+      position: absolute;
+      font-size: 2rem;
+      color: #FF6B9D;
+      opacity: 0;
+      animation: flyHeart 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes flyHeart {
+      0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.5);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(50px) rotate(360deg) scale(1);
+        opacity: 0;
+      }
+    }
+    
+    .flying-heart:nth-child(7) { left: 10%; animation-delay: 0s; color: #FF6B9D; }
+    .flying-heart:nth-child(8) { left: 25%; animation-delay: 1.5s; color: #FF85AB; font-size: 1.5rem; }
+    .flying-heart:nth-child(9) { left: 40%; animation-delay: 3s; color: #FF9FBF; }
+    .flying-heart:nth-child(10) { left: 55%; animation-delay: 4.5s; color: #FFB6D9; font-size: 2.5rem; }
+    .flying-heart:nth-child(11) { left: 70%; animation-delay: 6s; color: #FF6B9D; }
+    .flying-heart:nth-child(12) { left: 85%; animation-delay: 2s; color: #FF85AB; font-size: 1.8rem; }
+    .flying-heart:nth-child(13) { left: 15%; animation-delay: 5s; color: #FF9FBF; }
+    .flying-heart:nth-child(14) { left: 60%; animation-delay: 7s; color: #FFB6D9; font-size: 2.2rem; }
+    
+    /* Enhanced animations for landing page */
+    .landing-title {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      color: #8B4375;
+      margin-bottom: 25px;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 182, 217, 0.4);
+      animation: fadeInDown 1.2s ease-out, glow 3s ease-in-out infinite;
+      line-height: 1.2;
+    }
+    
+    @keyframes glow {
+      0%, 100% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 182, 217, 0.4); }
+      50% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15), 0 0 30px rgba(255, 140, 180, 0.6); }
+    }
+    
+    .landing-subtitle {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: #6B3559;
+      margin-bottom: 35px;
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      animation: fadeInUp 1.4s ease-out, pulse 2s ease-in-out infinite;
+      font-style: italic;
+      opacity: 0.9;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    
+    .celebration-btn {
+      background: linear-gradient(135deg, #FF8CB4 0%, #FF9FBF 100%);
+      color: white;
+      border: none;
+      padding: 18px 45px;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(255, 140, 180, 0.4);
+      transition: all 0.3s ease;
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      animation: fadeInUp 1.6s ease-out, bounce 2s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    .hide { display: none !important; }
+    
+    /* Main App Styles */
+    .main-app {
+      display: none;
+    }
+    
+    .main-app.show {
+      display: block;
+    }
+    
+    body.app-active {
+      background: #f4ece5;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    
+    .container {
+      width: 100vw;
+      max-width: 430px;
+      margin: 36px auto 0 auto;
+    }
+    
+    .main-bg {
+      width: 100%;
+      aspect-ratio: 3/4;
+      position: relative;
+      background: url('img/day1.jpg') center center/cover no-repeat;
+      border-radius: 24px;
+      box-shadow: 0 12px 44px #b993e649, 0 2px 8px #a793a044;
+      overflow: hidden;
+      margin-bottom: 17px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    
+    .main-bg.slide-in {
+      animation: slideInImage 0.6s ease-out;
+    }
+    
+    @keyframes slideInImage {
+      0% {
+        transform: scale(0.9) translateX(-30px);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    .thumbs-stack {
+      position: absolute;
+      right: 15px;
+      bottom: 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 3;
+    }
+    
+    .thumb-img {
+      width: 49px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px #ad38a944;
+      border: 2.5px solid #fff7;
+      background: #eee;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      outline: 3px solid transparent;
+      transform: scale(1);
+    }
+    
+    .thumb-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 18px #ad38a966;
+    }
+    
+    .thumb-img.active {
+      outline: 3px solid #ad38a9cc;
+    }
+    
+    .arrows-btns {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 11px;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      z-index: 4;
+    }
+    
+    .arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(180, 90, 215, 0.17);
+      border: none;
+      box-shadow: 0 2px 8px #ad38a928;
+      color: #9539c1;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.17s, color 0.17s;
+      position: relative;
+    }
+    
+    .arrow:active {
+      background: #b45ad7;
+      color: #fff;
+    }
+    
+    .glass-card {
+      width: 97%;
+      margin: 0 auto;
+      margin-top: -19px;
+      background: rgba(242, 235, 250, 0.33);
+      box-shadow: 0 8px 24px #ad38a930;
+      backdrop-filter: blur(13px) saturate(140%);
+      border: 2.5px solid rgba(174, 108, 230, 0.09);
+      color: #23201a;
+      display: flex;
+      flex-direction: column;
+      border-radius: 18px;
+      padding: 18px 18px 20px 20px;
+      z-index: 2;
+      position: static;
+      min-height: 80px;
+      transition: all 0.4s ease;
+    }
+    
+    .glass-card.fade-in {
+      animation: fadeInCard 0.6s ease-out;
+    }
+    
+    @keyframes fadeInCard {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .glass-card .quote-head {
+      font-weight: bold;
+      font-size: 1.18rem;
+      margin-bottom: 8px;
+      color: #7537b9;
+      letter-spacing: 0.5px;
+    }
+    
+    .glass-card .quote-text {
+      font-size: 0.97rem;
+      color: #222;
+      opacity: 0.97;
+      line-height: 1.6;
+      text-shadow: 0 1px 2px #fff4;
+      margin-bottom: 6px;
+      min-height: 47px;
+    }
+    
+    .glass-card .date {
+      color: #ad38a9;
+      font-size: 0.92rem;
+      letter-spacing: 0.5px;
+      margin: 8px 0 0 0;
+    }
+    
+    .read-more-btn {
+      background: rgba(140, 80, 255, 0.09);
+      border: none;
+      padding: 7px 22px;
+      border-radius: 9px;
+      color: #7d2fff;
+      box-shadow: 0 1.5px 7px #aa1dff22;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 8px auto 0 auto;
+      letter-spacing: 0.4px;
+      transition: background 0.18s;
+      display: inline-block;
+    }
+    
+    .read-more-btn:hover {
+      background: #d1c2f9;
+    }
+    
+    .dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin: 15px auto 0 auto;
+      padding-bottom: 5px;
+    }
+    
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #ad38a933;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      transform: scale(1);
+    }
+    
+    .dot:hover {
+      transform: scale(1.3);
+    }
+    
+    .dot.active {
+      background: #ad38a9;
+      box-shadow: 0 2px 7px #ad38a949;
+      transform: scale(1.2);
+      animation: dotPulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1.2); }
+      50% { transform: scale(1.4); }
+    }
+    
+    /* Blinking Stars Animation */
+    .star {
+      position: absolute;
+      color: #FFD700;
+      font-size: 1.2rem;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+      animation: blinkStar 1s ease-out forwards;
+    }
+    
+    @keyframes blinkStar {
+      0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.5) rotate(180deg);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0) rotate(360deg);
+      }
+    }
+    
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(44, 13, 50, 0.22);
+      backdrop-filter: blur(7px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    
+    .popup.active {
+      display: flex;
+    }
+    
+    .popup-box {
+      background: rgba(242, 235, 250, 0.69);
+      border-radius: 18px;
+      padding: 26px 26px 22px 26px;
+      box-shadow: 0 8px 44px #ad38a950;
+      min-width: 240px;
+      max-width: 94vw;
+      max-height: 82vh;
+      overflow-y: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .popup-quote-head {
+      font-size: 1.13rem;
+      color: #7537b9;
+      font-weight: bold;
+      margin-bottom: 10px;
+      letter-spacing: 0.4px;
+    }
+    
+    .popup-quote-text {
+      font-size: 1.03rem;
+      color: #27242a;
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+    
+    .popup-date {
+      color: #ad38a9;
+      font-size: 0.95rem;
+      letter-spacing: 0.4px;
+      margin-bottom: 6px;
+    }
+    
+    .popup-close {
+      position: absolute;
+      right: 17px;
+      top: 17px;
+      background: rgba(140, 80, 255, 0.18);
+      border: none;
+      border-radius: 6px;
+      font-size: 1.4rem;
+      color: #7d2fff;
+      font-weight: 700;
+      width: 29px;
+      height: 29px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    @media (max-width: 485px) {
+      .container {
+        max-width: 98vw;
+      }
+      .main-bg {
+        max-width: 98vw;
+      }
+      .thumb-img {
+        width: 39px;
+        height: 50px;
+      }
+      .glass-card {
+        font-size: 0.97rem;
+        padding: 11px 7px 19px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Landing Page -->
+  <div class="landing-page" id="landingPage">
+    <div class="decorative-elements">
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <i class="ri-flutter-fill butterfly"></i>
+      <i class="ri-heart-fill flying-heart"></i>
+      <i class="ri-heart-fill flying-heart"></i>
+      <i class="ri-heart-fill flying-heart"></i>
+      <i class="ri-heart-fill flying-heart"></i>
+      <i class="ri-heart-fill flying-heart"></i>
+      <i class="ri-heart-fill flying-heart"></i>
+      <i class="ri-heart-fill flying-heart"></i>
+      <i class="ri-heart-fill flying-heart"></i>
+    </div>
+    
+    <div class="landing-content">
+      <h1 class="landing-title">Happy Birthday, Beautiful!</h1>
+      
+      <p class="landing-subtitle">Today is all about celebrating you and the joy you bring to my life
+      </p>
+      
+      <div class="heart-icons">
+        <i class="ri-heart-fill"></i>
+        <i class="ri-heart-fill"></i>
+        <i class="ri-heart-fill"></i>
+        <i class="ri-heart-fill"></i>
+        <i class="ri-heart-fill"></i>
+      </div>
+      
+      <button class="celebration-btn" id="startBtn">
+        Start the Celebration 🎉
+      </button>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div class="main-app" id="mainApp">
+    <div class="container">
+      <div class="main-bg" id="mainBg">
+        <div class="thumbs-stack" id="thumbsStack"></div>
+        <div class="arrows-btns">
+          <button class="arrow" id="leftBtn"><i class="ri-arrow-left-s-line"></i></button>
+          <button class="arrow" id="rightBtn"><i class="ri-arrow-right-s-line"></i></button>
+        </div>
+      </div>
+      <div class="glass-card" id="cardText">
+        <div class="quote-head" id="quoteHead"></div>
+        <div class="quote-text" id="quoteText"></div>
+        <button class="read-more-btn" id="readMoreBtn" style="display:none;">Read More</button>
+        <div class="date" id="quoteDate"></div>
+      </div>
+      <div class="dots" id="dotsBar"></div>
+    </div>
+
+    <div class="popup" id="popup">
+      <div class="popup-box">
+        <button class="popup-close" id="popupClose">&times;</button>
+        <div class="popup-quote-head" id="popupHead"></div>
+        <div class="popup-quote-text" id="popupText"></div>
+        <div class="popup-date" id="popupDate"></div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgmusic" src="img/MUSIC.mp3" loop preload="auto"></audio>
+  <audio id="landingMusic" src="img/LANDINGMUSIC.mp3" preload="auto"></audio>
+
+  <script>
+    const wishes = [
+      {
+        img: "img/day1.jpg",
+        quoteHead: `"YOU ARE MAGICAL"`,
+        quoteText: `This is the first day when we both started talking, today is your birthday but I am happier than you, I did not know that you would talk to me or not but I will pray that you always stay with me, you always remain happy like this. ❤`,
+        date: "28-OCT-2024",
+        thumbs: ["img/day2.jpg", "img/day3.jpg"]
+      },
+      {
+        img: "img/day2.jpg",
+        quoteHead: `"DIWALI MAGIC"`,
+        quoteText: `Today is Diwali, you should remember that you had called me, I came home only on your call, you were looking very beautiful that day like my dream love, so Pretty. You like crackers a lot but you are my Diwali. I feel happy seeing you, today I even proposed to you, please reply soon and reply in yes.`,
+        date: "31-OCT-2024",
+        thumbs: ["img/day3.jpg", "img/day4.jpg"]
+      },
+      {
+        img: "img/day3.jpg",
+        quoteHead: `"FIRST MEET FACE TO FACE"`,
+        quoteText: `Finally today we met face to face for the first time, the feeling of roaming with you on scooty was different Yr, yes I am feeling a little embarrassed but the excitement of meeting with you was also very high, how should I tell you how happy I was at that time when you came to pick me up and roamed with me.`,
+        date: "05-NOV-2024",
+        thumbs: ["img/day4.jpg", "img/day5.jpg"]
+      },
+      {
+        img: "img/day4.jpg",
+        quoteHead: `"BROTHER'S BIRTHDAY"`,
+        quoteText: `Today is your brother's birthday, which means I have got another chance to meet you. Your mother has a big problem with me; she is not letting me go to buy the cake with you. I missed the chance to hang out with you again. By the way, you were looking very cute today. I'm fallen for you.`,
+        date: "21-NOV-2024",
+        thumbs: ["img/day5.jpg", "img/day6.jpg"]
+      },
+      {
+        img: "img/day5.jpg",
+        quoteHead: `"AGAIN SPECIAL DAY"`,
+        quoteText: `So we met again today, I could never forget this day, it was the most special day in the world for me, I will never get to spend that time with you again in my life, nor will I get to. I will never be able to forget you 😔, how can you forget me. I wish you still liked me, we both would have been together. But I know it's impossible, thank you dear for understanding me so much.`,
+        date: "22-NOV-2024",
+        thumbs: ["img/day6.jpg", "img/day7.jpg"]
+      },
+      {
+        img: "img/day6.jpg",
+        quoteHead: `"RAMAYAN"`,
+        quoteText: `Hey you all have returned, I prayed a lot to God that the Ramayana should be at your house. And see, my wish is completed. I don't feel like staying in that house without you, I am waiting for you, please come, yr again your brother got suspicious about me, he shouted at you but I am feeling bad, it was my mistake, I should not have come to you, today we both played games, you even fed me food, you are very nice yr`,
+        date: "29-NOV-2024",
+        thumbs: ["img/day7.jpg", "img/day8.jpg"]
+      },
+      {
+        img: "img/day7.jpg",
+        quoteHead: `"I'M MISSING YOU"`,
+        quoteText: `Now we are going to Jabalpur, I will be far away from you for a few days, Pr I will miss you a lot, now you have become very busy in studies, sometimes you forget me, I don't know why, please remember me a little, but this has not happened with me, I miss you daily.`,
+        date: "08-DEC-2024",
+        thumbs: ["img/day8.jpg", "img/day9.jpg"]
+      },
+      {
+        img: "img/day8.jpg",
+        quoteHead: `"2 MINUTES MEET"`,
+        quoteText: `Listen, I have completed your copy, which means I will return it to you and see you again, but what is this, I met you only for 2 minutes, my heart is not satisfied with that, even these 2 minutes looking at you were enough, I feel that you are going away from me now. I don't understand what to do. I never want to lose you, think about what will happen to me if you go away from me. I will not let you go away, you are my happiness.`,
+        date: "14-DEC-2025",
+        thumbs: ["img/day9.jpg", "img/day10.jpg"]
+      },
+      {
+        img: "img/day9.jpg",
+        quoteHead: `"FAREWELL ANXIETY"`,
+        quoteText: `I heard that there is a farewell in your school, you seem very excited about it, I am happy. But I am afraid that there are a lot of good boys in your school, all of them look good and have good money and are smart too, no one is dumb like me. I wonder if someone proposes to you and you might leave me, you will not do that, today you have made me very insecure, I would not have stopped you from going to the farewell but you destroyed my importance, but for me you will always be important. Because you are my first priority.`,
+        date: "07-JAN-2025",
+        thumbs: ["img/day10.jpg", "img/day11.jpg"]
+      },
+      {
+        img: "img/day10.jpg",
+        quoteHead: `"A BLACK DAY FOR ME"`,
+        quoteText: `Today is like a death for me. Today you broke up with me. I had no value for you, you broke up with me because of that farewell. How can you do this, you are saying, have you lost interest, did you do this just because you were interested in me, tell me? I thought you loved me but maybe I was wrong. You don't love me. I could never bear that day, you left me that day, you never thought about me even once, you were not like that. I'll wait for you, I'll Never forget you. I Still Love You Pari.`,
+        date: "12-JAN-2024",
+        thumbs: ["img/day11.jpg", "img/day12.jpg"]
+      },
+      {
+        img: "img/day11.jpg",
+        quoteHead: `"TRYING TO RECONNECT"`,
+        quoteText: `Today I have messaged you after thinking for a long time, I don't know whether you will talk to me or not, from your words it seems that you have ended all connections with me till now, I am a stalker of you, you reply just to keep me happy but I am happy that you are with me.`,
+        date: "19-FEB-2025",
+        thumbs: ["img/day12.jpg", "img/day13.jpg"]
+      },
+      {
+        img: "img/day12.jpg",
+        quoteHead: `"AFTER SO LONG"`,
+        quoteText: `So finally I saw you today, you have become even more beautiful, you look amazing in that dress. You know how many days have passed since we met, you don't remember anything, you are a forgetful girl, it's good that you messaged me today, otherwise we wouldn't have talked to you later. When you were going to the library, I came to meet you, but look at my bad luck, I couldn't meet you. 04-AUG-2025 hey, today is my birthday, I thought you might have forgotten, but the first message was from you, thank you so much dear.`,
+        date: "18-APR-2025",
+        thumbs: ["img/day13.jpg", "img/day14.jpg"]
+      },
+      {
+        img: "img/day13.jpg",
+        quoteHead: `"FIRST GIFT EVER"`,
+        quoteText: `Yes, today we both were supposed to meet, for the first time in our lives I have bought a gift for me, I am so happy today that you cannot explain it in words. It has been 6 months since I met you face to face. I don't know how I will meet you, because I still get nervous seeing you, you did not talk to me well yesterday, I was reading your old chats, I was really missing you but you are not the one I used to like. Well, let's pay attention today, what happened, I spoke to you in the wrong way, I want to apologize to you, please forgive me once, I will not do anything like this in future. It's 22-OCT-2025 Tumne aj mujhe gift de dia, So Are looking so gorgeous today. Ye bht acha h ye hmesha mere pas rhega. It's my first & last gift Thank You So much.`,
+        date: "17-OCT-2025",
+        thumbs: ["img/day14.jpg", "img/day15.jpg"]
+      },
+      {
+        img: "img/day14.jpg",
+        quoteHead: `"ONE YEAR JOURNEY"`,
+        quoteText: `Ab ise mai Hindi me hi likhunga 😂 translate nhi kruga , So Happiest Birthday To you Ever Cutie , 💓 Aj tumse bat krte huye pura 1 Sal complete ho gya . Is ek sal me tumse kitna Kuch kaha kitna suna , Tumse Pyar kia tumse door gya and Many More . Kitna Awkward moment hai na tum yaha thi pr tumse ek bar mil nhi paya , Last time bhi ni mil ska isse jyada kya bad luck hoga meri life ka Parii. I know tum mujhe pasand ni krti ho and m tumhare piche pda rhta hu 😂 , Aj m chahta hu ki tumhe dunia ki sari khushi mile mai to tumhe bs haste huye dekhna chahta hu , Yrr tumhara Gift dena h mujhe pr physical gift to logi nhi to Tum Ise hi apna Gift Smjhna . Or ha Kabhi Naraj mt hona mujhse Okey na . Aj tumse ek last time milna chahta tha but ye mumkin nahi h, 30 ko tum chli jaogi. agr tumhara man kre to ek bar milkar jana bs itna kafi h , Abhi bht sare log wish krne wale h tumhe pr maine socha thoda sa diffrent kru Have A Great Time & Have a Good Life My Dream Girl.`,
+        date: "28-OCT-2025",
+        thumbs: ["img/day15.jpg", "img/day1.jpg"]
+      },
+      {
+        img: "img/day15.jpg",
+        quoteHead: `"LAST MESSAGE"`,
+        quoteText: `This is the last mesg For You Pari From My side. Ha ye mera last msg h , Ab m tumhe hmesha ki trh Preshan ni krne wala hu . M tumse hmesha ke liye door ho jana chahta hu , Mujhe Nhi pta ki tumne kabhi mujhse pyar kia ya nhi but wo jo bhi tha M us layak nhi tha fir bhi tumne mujhe Us layak smjha , Mere sath rhi Ha mai tumhe kabhi bhul to nhi Pauga Pr tum jrur bhul chuki ho , Mujhe to tumhari hr ek bat yad h pr kya kr skta hu ,Tumhe apni life me ab dobara Pa bhi nhi skta kyuki m us kabil nhi hu , But tumhe m hmesha Apni priority smjhuga. You Are so important for me . Mai Bhagwan se sirf yahi wish mangunga ki tumhe Tumhara MBBS wala Partner Jrur mile And Last Wo Tumhe hmesha khush rkhe Bs. Kash ki meri life me wo din ni ata jb mene tumhe approach kia. Pyar ek tarfa hota to shi rhta pr bich me do trfa hokr fir ek tarfa ho gya , Ye bardasht nhi hota. Bht bura lgta h jb tumse bt krne ki koshish Krta hu pr tum bt hi NHI krti. Meri feeling tumhe smjh nhi ayegi , Smjhne ke liye kabhi tumhe kisi se pyar krna hoga. JATI NHI AAKHON SE SOORAT TERI NA JATI DIL SE MOHABBAT TERI TERE JANE KE BAD HOTA H MAHSUS YU HAME OR BHI JYADA JARURT TERI`,
+        date: "LAST MESSAGE",
+        thumbs: ["img/day1.jpg", "img/day2.jpg"]
+      }
+    ];
+
+    let curr = 0;
+    const mainBg = document.getElementById('mainBg');
+    const quoteHead = document.getElementById('quoteHead');
+    const quoteText = document.getElementById('quoteText');
+    const quoteDate = document.getElementById('quoteDate');
+    const thumbsStack = document.getElementById('thumbsStack');
+    const dotsBar = document.getElementById('dotsBar');
+    const readMoreBtn = document.getElementById('readMoreBtn');
+    const popup = document.getElementById('popup');
+    const popupHead = document.getElementById('popupHead');
+    const popupText = document.getElementById('popupText');
+    const popupDate = document.getElementById('popupDate');
+    const popupClose = document.getElementById('popupClose');
+
+    function updateCard(idx) {
+      const wish = wishes[idx];
+      
+      // Add animation classes
+      mainBg.classList.remove('slide-in');
+      document.getElementById('cardText').classList.remove('fade-in');
+      
+      // Trigger reflow to restart animation
+      void mainBg.offsetWidth;
+      void document.getElementById('cardText').offsetWidth;
+      
+      mainBg.classList.add('slide-in');
+      document.getElementById('cardText').classList.add('fade-in');
+      
+      // Create blinking stars animation
+      createStars();
+      
+      mainBg.style.backgroundImage = `url('${wish.img}')`;
+      quoteHead.textContent = wish.quoteHead;
+      quoteDate.textContent = wish.date;
+      const cutoff = 170;
+      if (wish.quoteText.length > cutoff) {
+        quoteText.textContent = wish.quoteText.slice(0, cutoff) + " ...";
+        readMoreBtn.style.display = "inline-block";
+      } else {
+        quoteText.textContent = wish.quoteText;
+        readMoreBtn.style.display = "none";
+      }
+      thumbsStack.innerHTML = "";
+      wish.thumbs.forEach(src => {
+        const img = document.createElement('img');
+        img.className = "thumb-img";
+        img.src = src;
+        let targetIdx = wishes.findIndex(w => w.img === src);
+        if (targetIdx === -1) targetIdx = 0;
+        if (targetIdx === idx) img.classList.add("active");
+        img.onclick = () => {
+          curr = targetIdx;
+          updateCard(curr);
+        }
+        thumbsStack.appendChild(img);
+      });
+      dotsBar.innerHTML = "";
+      wishes.forEach((w, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (i === curr ? ' active' : '');
+        dot.onclick = () => {
+          curr = i;
+          updateCard(curr);
+        }
+        dotsBar.appendChild(dot);
+      });
+    }
+
+    document.getElementById('leftBtn').onclick = () => {
+      curr = (curr > 0) ? curr - 1 : wishes.length - 1;
+      updateCard(curr);
+    }
+    document.getElementById('rightBtn').onclick = () => {
+      curr = (curr < wishes.length - 1) ? curr + 1 : 0;
+      updateCard(curr);
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') document.getElementById('rightBtn').click();
+      else if (e.key === 'ArrowLeft') document.getElementById('leftBtn').click();
+    });
+
+    readMoreBtn.onclick = () => {
+      const wish = wishes[curr];
+      popupHead.textContent = wish.quoteHead;
+      popupText.textContent = wish.quoteText;
+      popupDate.textContent = wish.date;
+      popup.classList.add('active');
+    }
+    popupClose.onclick = () => {
+      popup.classList.remove('active');
+    }
+    popup.onclick = e => {
+      if (e.target === popup) popup.classList.remove('active');
+    }
+
+    // Landing to Main App transition
+    document.getElementById('startBtn').addEventListener('click', function() {
+      // Stop landing music and start main music
+      var landingMusic = document.getElementById('landingMusic');
+      var bgMusic = document.getElementById('bgmusic');
+      
+      landingMusic.pause();
+      landingMusic.currentTime = 0;
+      
+      bgMusic.volume = 0.44;
+      bgMusic.play().catch(() => {});
+      
+      document.getElementById('landingPage').classList.add('hide');
+      document.getElementById('mainApp').classList.add('show');
+      document.body.classList.add('app-active');
+      updateCard(curr);
+    });
+
+    // Audio autoplay
+    document.addEventListener("DOMContentLoaded", function() {
+      var landingMusic = document.getElementById("landingMusic");
+      var bgMusic = document.getElementById("bgmusic");
+      
+      landingMusic.volume = 0.5;
+      
+      // Try to play landing music on page load
+      landingMusic.play().catch(() => {});
+
+      function enableAudio() {
+        if (landingMusic.paused && !document.getElementById('landingPage').classList.contains('hide')) {
+          landingMusic.play();
+        }
+        if (bgMusic.paused && document.getElementById('landingPage').classList.contains('hide')) {
+          bgMusic.play();
+        }
+        document.removeEventListener('click', enableAudio);
+        document.removeEventListener('touchstart', enableAudio);
+      }
+      document.addEventListener('click', enableAudio);
+      document.addEventListener('touchstart', enableAudio);
+    });
+    
+    // Function to create blinking stars on memory switch
+    function createStars() {
+      const container = document.querySelector('.container');
+      const numStars = 8;
+      
+      for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('i');
+        star.className = 'ri-sparkling-fill star';
+        
+        // Random position around the image
+        const randomX = Math.random() * 100;
+        const randomY = Math.random() * 60;
+        
+        star.style.left = randomX + '%';
+        star.style.top = randomY + '%';
+        star.style.animationDelay = (i * 0.1) + 's';
+        
+        container.appendChild(star);
+        
+        // Remove star after animation completes
+        setTimeout(() => {
+          star.remove();
+        }, 1000 + (i * 100));
+      }
+    }
+  </script>
+</body>
+</html>
